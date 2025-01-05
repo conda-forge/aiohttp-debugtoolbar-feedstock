@@ -6,11 +6,11 @@ package:
   version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 697c9cfac4017d532e26a8c05f14c1a43b3b147f53460daacb0ed144401df441
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
@@ -19,13 +19,15 @@ requirements:
     - aiohttp >=2.0.7
     - aiohttp-jinja2
     - pip
-    - python >3
+    - python {{ python_min }}
   run:
     - aiohttp >=2.0.7
     - aiohttp-jinja2
-    - python >3
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - aiohttp_debugtoolbar
     - aiohttp_debugtoolbar.panels
