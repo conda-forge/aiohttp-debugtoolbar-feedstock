@@ -1,5 +1,5 @@
 {% set name = "aiohttp-debugtoolbar" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 697c9cfac4017d532e26a8c05f14c1a43b3b147f53460daacb0ed144401df441
+  sha256: ec231661133b40136608d39dfb688e7ea0c3d47b6ae6dee52d5bf24ceb9e4d45
 
 build:
   number: 0
